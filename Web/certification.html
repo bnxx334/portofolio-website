@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certification - Banyu Handika</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cert-page {
+            min-height: 100vh;
+            padding-top: 100px;
+            padding-bottom: 80px;
+        }
+
+        .cert-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .cert-header h1 {
+            font-size: 3rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .cert-header p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .cert-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .cert-pdf-container {
+            width: 100%;
+            height: 300px;
+            background: var(--bg-medium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-pdf-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;
+        }
+
+        .cert-pdf-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: transparent;
+            z-index: 1;
+        }
+
+        .cert-info {
+            padding: 2rem;
+        }
+
+        .cert-info h3 {
+            color: var(--text-light);
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .cert-info .cert-issuer {
+            color: var(--highlight-color);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .cert-info .cert-date {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-info p {
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .cert-link {
+            display: inline-block;
+            padding: 10px 25px;
+            background: var(--highlight-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .cert-link:hover {
+            background: #d63851;
+            transform: translateY(-2px);
+        }
+
+        .cert-link-secondary {
+            background: transparent;
+            border: 2px solid var(--highlight-color);
+            color: var(--highlight-color);
+        }
+
+        .cert-link-secondary:hover {
+            background: var(--highlight-color);
+            color: white;
+        }
+
+        .back-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: var(--text-dark);
+            text-decoration: none;
+            border: 2px solid var(--highlight-color);
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: var(--highlight-color);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .cert-header h1 {
+                font-size: 2rem;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">Tentang</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="index.html#skills" class="nav-link">Keahlian</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="certification.html" class="dropdown-link">Certification</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#projects" class="nav-link">Projek</a></li>
+                <li><a href="index.html#contact" class="nav-link">Kontak</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="cert-page">
+        <div class="cert-header">
+            <h1>Sertifikat Saya</h1>
+            <p>Koleksi sertifikat dan pencapaian profesional</p>
+        </div>
+
+        <div class="cert-grid">
+            <!-- Contoh Sertifikat 1 -->
+            <div class="cert-card">
+                <div class="cert-pdf-container">
+                    <iframe src="Asset/sertif/mtcna.pdf" type="application/pdf"></iframe>
+                    <div class="cert-pdf-overlay"></div>
+                </div>
+                <div class="cert-info">
+                    <h3>MikroTik Certified Network Associate</h3>
+                    <div class="cert-issuer">MikroTik</div>
+                    <div class="cert-date">Issued: December 2025</div>
+                    <p>Sertifikasi dasar MikroTik yang mencakup routing, wireless, firewall, dan network management.</p>
+                    <div class="cert-actions">
+                        <a href="Asset/sertif/mtcna.pdf" class="cert-link" target="_blank">Lihat PDF</a>
+                        <a href="Asset/sertif/mtcna.pdf" class="cert-link cert-link-secondary" download>Download</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contoh Sertifikat 2 -->
+            <div class="cert-card">
+                <div class="cert-pdf-container">
+                    <iframe src="Asset/sertif/mtcre.jpg" type="JPG"></iframe>
+                    <div class="cert-pdf-overlay"></div>
+                </div>
+                <div class="cert-info">
+                    <h3>MikroTik Certified Routing Engineer</h3>
+                    <div class="cert-issuer">MikroTik</div>
+                    <div class="cert-date">Issued: December 2025</div>
+                    <p>Sertifikasi advanced untuk routing protocols, OSPF, BGP, dan network optimization.</p>
+                    <div class="cert-actions">
+                        <a href="Asset/sertif/mtcre.jpg" class="cert-link" target="_blank">Lihat PDF</a>
+                        <a href="Asset/sertif/mtcre.jpg" class="cert-link cert-link-secondary" download>Download</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tambahkan sertifikat lainnya di sini dengan format yang sama -->
+
+            <div class="cert-card">
+                <div class="cert-pdf-container">
+                    <iframe src="Asset/sertif/BANYU-HANDIKA-Jaringan-Dasar-Sertifikat-Jaringan-Komputer-Dasar-LMS-ID-Networkers.pdf" type="application/pdf"></iframe>
+                    <div class="cert-pdf-overlay"></div>
+                </div>
+                <div class="cert-info">
+                    <h3>Network Fundamental</h3>
+                    <div class="cert-issuer">MikroTik</div>
+                    <div class="cert-date">Issued: January 2026</div>
+                    <p>Sertifikasi dasar untuk mengenali Protokol TCP/IP, OSI Layer.</p>
+                    <div class="cert-actions">
+                        <a href="Asset/sertif/BANYU-HANDIKA-Jaringan-Dasar-Sertifikat-Jaringan-Komputer-Dasar-LMS-ID-Networkers.pdf " class="cert-link" target="_blank">Lihat PDF</a>
+                        <a href="Asset/sertif/BANYU-HANDIKA-Jaringan-Dasar-Sertifikat-Jaringan-Komputer-Dasar-LMS-ID-Networkers.pdf " class="cert-link cert-link-secondary" download>Download</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="back-container">
+            <a href="index.html" class="back-link">Kembali ke Home</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Portfolio. Dibuat dengan ❤️</p>
+    </footer>
+</body>
+</html>
